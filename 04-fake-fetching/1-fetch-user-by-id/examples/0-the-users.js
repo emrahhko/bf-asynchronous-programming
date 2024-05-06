@@ -11,3 +11,5 @@ import { users } from '../../../lib/fetch-user-by-id/users.js';
 */
 
 console.log(users);
+
+console.log(users.username);
