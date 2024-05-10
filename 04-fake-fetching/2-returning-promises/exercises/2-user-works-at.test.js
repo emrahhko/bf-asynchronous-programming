@@ -9,7 +9,17 @@ const { log } = labeledLogger();
 /**
  *
  */
-const userWorksAt = () => {};
+const userWorksAt = (id, company) => {
+  return fetchUserById(id)
+    .then((data) => {
+      if (data.company.name === company) {
+        return true;
+      } else {
+        return false;
+      }
+    })
+    .catch((err) => console.error(err));
+};
 
 // --- test function ---
 
