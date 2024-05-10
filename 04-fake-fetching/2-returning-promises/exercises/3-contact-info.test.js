@@ -6,10 +6,19 @@ const { log } = labeledLogger();
 
 // --- declare function ---
 
+
 /**
  *
  */
-const contactInfo = () => {};
+const contactInfo = (id) => {
+  const newArr = [];
+  return fetchUserById(id)
+    .then((data) => {
+      newArr.push(data.email, data.phone, data.website)
+      return newArr;
+    })
+    .catch((err) => console.error(err));
+};
 
 // --- test function ---
 
